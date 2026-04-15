@@ -838,7 +838,12 @@ define(function(require) {
 			document.querySelectorAll('span,.number,.sub-cell,.element-title, .multi-line-div').forEach(replaceBoth);
 
 			printLogs();
-		}
+		},
+		
+		isFeatureAvailable: function(featurePath) {
+			return _.get(monster.apps.auth.appFlags.featureSet, featurePath, true);
+		},
+		
 	};
 
 	/**
